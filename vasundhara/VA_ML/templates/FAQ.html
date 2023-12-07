@@ -1,0 +1,219 @@
+{% extends "index.html" %}
+{% load static %}
+{% block body %}
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- font awesome link -->
+  {% comment %} <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> {% endcomment %}
+
+  
+ 
+  <title>FAQ</title>
+  <body style="background-color:#e9ffdb;">
+    {% comment %} <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/linuxguist/faqa@main/styles.css">
+
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/linuxguist/faqa@main/stylesheet.css"> {% endcomment %}
+
+<style type="text/css">
+  .faq {
+    text-align: center;
+    justify-content: center;
+    padding: 20px;
+    width: 80%;
+  }
+
+  .faq-icon {
+    height: 18px;
+    width: 18px;
+    margin-top: 3px;
+  }
+
+  .accordion {
+    background-color:white;
+    color: #282A35;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    transition: 0.4s;
+  }
+
+  .active,
+  .accordion:hover {
+    background-color: yellow;
+    color: #282A35;
+  }
+
+  .active {
+    border-radius: 10px 10px 0px 0px;
+  }
+
+  .details-description {
+    font-size: 22px;
+    margin-top: 20px
+  }
+
+  .panel {
+    padding: 0 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+    background-color: #f3ecea;
+    margin-top: -28px;
+    color: #282A35;
+    display: none;
+    overflow: hidden;
+    border-radius: 0px 0px 10px 10px;
+    text-align: left;
+  }
+
+  .panel,
+  .accordion {
+    margin-bottom: 2rem;
+  }
+
+  button.accordion {
+    font-weight: bold;
+    font-size: 16px;
+  }
+
+  .paragraphs {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    white-space: pre-wrap;
+  }
+
+  .header {
+    font-size: 40px;
+    font-weight: 600;
+    font-family: 'Calibri Light (Headings)', sans-serif;
+     {% comment %} color: black;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 0px #957dad,
+      1px 2px 0px #957dad,
+      1px 3px 0px #957dad,
+      1px 4px 0px #957dad,
+      1px 5px 0px #957dad,
+      1px 6px 0px #957dad,
+      1px 10px 5px rgba(16, 16, 16, 0.5),
+      1px 15px 10px rgba(16, 16, 16, 0.4),
+      1px 20px 30px rgba(16, 16, 16, 0.3),
+      1px 25px 50px rgba(16, 16, 16, 0.2); {% endcomment %} 
+  } 
+</style>
+
+<div class="w3-center ws-black w3-animate-zoom" style="margin-top: -1px;">
+  <div class="w3-center w3-content">
+    <div class="faq w3-center w3-content" style="padding-top: 55px;">
+      <h2 class="header" style="color: #b393d3;"><b>Frequently Asked Questions</b></h2><br>
+      {% for i in fandq %}
+        <button class="accordion" style="display: flex; flex-direction: row;"><img class="faq-icon" src="https://cdn.jsdelivr.net/gh/linuxguist/faqa@main/chevron-down.svg"> &nbsp; &nbsp; <b style="padding-top: 2px;">{{i.question}}</b></button>
+        <div class="panel" style="display: none;">
+          <div class="paragraphs" id="myDiv_id{{i.id}}"></div>
+          <p id="paragraph_id{{i.id}}" style="display: none;">{{i.answer}}</p>
+        </div>
+      {% endfor %}
+      {% comment %} <button class="accordion" style="display: flex; flex-direction: row;"><img class="faq-icon" src="https://cdn.jsdelivr.net/gh/linuxguist/faqa@main/chevron-down.svg"> &nbsp; &nbsp; <b style="padding-top: 2px;">How do you collect samples of soil to create report?</b></button>
+      <div class="panel" style="display: none;">
+        <div class="paragraphs" id="myDiv_id1"></div>
+        <p id="paragraph_id1" style="display: none;">Collect the soil sample during fallow period. In the standing crop, collect samples between rows. Sampling at several locations in a zig-zag pattern ensures homogeneity. Fields, which are similar in appearance, production and past-management practices, can be grouped into a single sampling unit.        </p>
+      </div>
+      <button class="accordion" style="display: flex; flex-direction: row;"><img class="faq-icon" src="https://cdn.jsdelivr.net/gh/linuxguist/faqa@main/chevron-down.svg"> &nbsp; &nbsp; <b style="padding-top: 2px;">Can the harvested seed from hybrid rice crop be used again for planting next crop?</b></button>
+      <div class="panel" style="display: none;">
+        <div class="paragraphs" id="myDiv_id2"></div>
+        <p id="paragraph_id2" style="display: none;">No. Every season, farmers have to purchase the fresh F1 hybrid seed for growing the crop of hybrid rice. The high yielding potential of hybrids is expressed in first generation only. If the seed from hybrid crop is used again for replanting, there will be lot of variation in the crop due to segregation and yield is reduced drastically.        </p>
+      </div>
+      <button class="accordion" style="display: flex; flex-direction: row;"><img class="faq-icon" src="https://cdn.jsdelivr.net/gh/linuxguist/faqa@main/chevron-down.svg"> &nbsp; &nbsp; <b style="padding-top: 2px;">Is it possible to produce own hybrid rice seed?</b></button>
+      <div class="panel" style="display: none;">
+        <div class="paragraphs" id="myDiv_id3"></div>
+        <p id="paragraph_id3" style="display: none;">In order to maintain high seed quality and purity and for realizing targetted yields, hybrid seed should be strictly produced under the supervision of a seed production agency either in public or private sector. This being a highly technical and skill oriented enterprise, it may not be proper to leave it entirely to the farmers themselves, since quality control and marketing are also involved.
+        </p>
+      </div>
+      <button class="accordion" style="display: flex; flex-direction: row;"><img class="faq-icon" src="https://cdn.jsdelivr.net/gh/linuxguist/faqa@main/chevron-down.svg"> &nbsp; &nbsp; <b style="padding-top: 2px;">What are the important points about bajra?</b></button>
+      <div class="panel" style="display: none;">
+        <div class="paragraphs" id="myDiv_id4"></div>
+        <p id="paragraph_id4" style="display: none;">Bajra is a type of pearl millet grown primarily in Africa and India, although it is consumed worldwide. The gluten-free grain is low in calories but packed with healthy nutrients that may contribute to weight loss, improved blood sugar levels, and other health benefits.
+        </p>
+      </div>
+      <button class="accordion" style="display: flex; flex-direction: row;"><img class="faq-icon" src="https://cdn.jsdelivr.net/gh/linuxguist/faqa@main/chevron-down.svg"> &nbsp; &nbsp; <b style="padding-top: 2px;">which fertilizer is best for bajara crops?</b></button>
+      <div class="panel" style="display: none;">
+        <div class="paragraphs" id="myDiv_id5"></div>
+        <p id="paragraph_id5" style="display: none;">Fertilizer Management : Use balance fertilizers as per the soil test basis. Generally for hybrid varieties 80-100kg nitrogen,40-50kg phosphorous ,and 40kg potash is recommended, while composite varieties needs 40-50kg nitrogen, 25kg phosphorous ,and 25kg potash per hectare.        </p>
+      </div> {% endcomment %}
+    {% comment %} </div>
+    <h4 class="undertitle" style="color: #FFFFFF;">Have some other questions? <a href="https://example.com" target="_blank">Visit our support page</a></h4>
+    <a class="spaces-button w3-button w3-round-xxlarge ws-green ws-hover-green" href="https://example.com" style="padding: 10px; padding-left: 80px; padding-right: 80px; margin-top: 20px;margin-bottom:20px">Button For Further Action</a>
+    <h6 style="color: #FFFFFF;"><a href="https://example.com" target="_blank">Terms and Conditions Link</a></h6><br>
+  </div> {% endcomment %}
+</div>
+
+<script>
+  var acc = document.getElementsByClassName("accordion");
+  var i;
+  for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var panel = this.nextElementSibling;
+      if (panel.style.display === "block") {
+        panel.style.display = "none";
+        // clearBox('myDiv_id1')
+      } else {
+        panel.style.display = "block";
+        let firstElementChild = panel.children[0].id;
+        let secondElementChild = panel.children[1].id;
+        // console.log(firstElementChild);
+        // console.log(secondElementChild);
+        printStringByLetter(secondElementChild, firstElementChild);
+      }
+    });
+  }
+  var images = document.querySelectorAll(".faq-icon");
+  images.forEach(function(image) {
+    image.addEventListener("click", changeImage);
+  });
+
+  function changeImage() {
+    if (this.src.match("chevron-down")) {
+      this.src = "https://cdn.jsdelivr.net/gh/linuxguist/faqa@main/chevron-up.svg";
+    } else {
+      this.src = "https://cdn.jsdelivr.net/gh/linuxguist/faqa@main/chevron-down.svg";
+    }
+  }
+</script>
+
+<script type="text/javascript">
+  function printStringByLetter(paragraph_id, myDiv_id) {
+    var myDiv = document.getElementById(myDiv_id);
+    var text = document.getElementById(paragraph_id).innerHTML;
+    // myDiv.innerHTML = "";
+    document.getElementById(myDiv_id).innerHTML = "";
+    // console.log(text.length);
+    var index = 0;
+    var intervalId = setInterval(function() {
+      myDiv.innerHTML += text.charAt(index);
+      index++;
+      // console.log(index);
+      if (index == text.length) {
+        clearInterval(intervalId);
+        index = 0;
+        text = "";
+      }
+    }, 10);
+  }
+
+  function clearBox(elementID) {
+    document.getElementById(elementID).innerHTML = "";
+  }
+</script>
+</body>
+{% endblock body %}
+</html>

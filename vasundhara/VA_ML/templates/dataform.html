@@ -1,0 +1,168 @@
+{% extends "index.html" %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- font awesome link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  {% comment %} <link rel="stylesheet" href="{% static 'css/login.css' %}"> {% endcomment %}
+  {% comment %} <link rel="stylesheet" href="{% static 'js/login.js' %}"> {% endcomment %}
+  <title>Login</title>
+</head>
+  {% block body %}
+<body>
+  <div class="container-fluid">
+    <div class="row min-vh-100">
+        <div class="col-12">
+          <header class="row">
+            <div class="col-12">
+              <!-- Main Content -->
+              <div class="row">
+                  <div class="col-12 mt-3 text-center text-uppercase">
+                      <h2 style="color: #013309;font-weight: bold;">Crop Recommendation</h2>
+                  </div>
+              </div>
+  {% comment %} <center><h3>Crop Recommendation FORM</h3></center> {% endcomment %}
+
+<form method="post" action="{% url 'predict' %}" >
+  {% csrf_token %} 
+  <table align="center" cellpadding="10">
+
+    <!----- Nitrogen  ---------------------------------------------------------->
+    <tr>
+      <td style="font-size:15px;font-weight: bold;font-family: Arial, Helvetica, sans-serif;color:black;">Nitrogen-N</td>
+      <td><input type="floatformat" name="n" maxlength="10" style="box-shadow: inset 4px 4px  8px rgba(217, 242, 230);" required/>
+        kg/ha 
+      </td>
+    </tr>
+
+    <!----- phospheres ---------------------------------------------------------->
+    <tr>
+      <td style="font-size:15px;font-weight: bold;font-family: Arial, Helvetica, sans-serif;color:black;">Phospheres-P</td>
+      <td><input type="floatformat" name="p" maxlength="10" style="box-shadow: inset 4px 4px  8px rgba(217, 242, 230);" required/>
+        kg/ha 
+      </td>
+    </tr>
+
+    <!----- Potessium ---------------------------------------------------------->
+    <tr>
+      <td style="font-size:15px;font-weight: bold;font-family: Arial, Helvetica, sans-serif;color:black;">Potessium-K</td>
+      <td><input type="floatformat" name="k" maxlength="10" style="box-shadow: inset 4px 4px  8px rgba(217, 242, 230);" required/>
+        kg/ha 
+      </td>
+    </tr>
+
+    <!----- pH level ---------------------------------------------------------->
+    <tr>
+      <td style="font-size:15px;font-weight: bold;font-family: Arial, Helvetica, sans-serif;color:black;">pH Level</td>
+      <td><input type="floatformat" name="ph" maxlength="10" style="box-shadow: inset 4px 4px  8px rgba(217, 242, 230);" required/></td>
+    </tr>
+
+    <!----- Rainfall ---------------------------------------------------------->
+    <tr>
+      <td style="font-size:15px;font-weight: bold;font-family: Arial, Helvetica, sans-serif;color:black;">Rainfall</td>
+      <td><input type="floatformat" name="rf" maxlength="10" style="box-shadow: inset 4px 4px  8px rgba(217, 242, 230);" required/>
+        millimeters (mm)
+      </td>
+    </tr>
+
+  <!----- Humidity ---------------------------------------------------------->
+  <tr>
+    <td class="karan" style="font-size:15px;font-weight: bold;font-family: Arial, Helvetica, sans-serif;color:black;">Humidity</td>
+    <td><input type="floatformat" name="humidity" maxlength="10" style="box-shadow: inset 4px 4px  8px rgba(217, 242, 230);" required/>
+      percentage (%)
+    </td>
+  </tr>
+
+
+<!----- Temprature ---------------------------------------------------------->
+<tr>
+  <td class="karan" style="font-size:15px;font-weight: bold;font-family: Arial, Helvetica, sans-serif;color:black;">Temprature</td>
+  <td><input type="floatformat" name="temperature" maxlength="10" style="box-shadow: inset 4px 4px  8px rgba(217, 242, 230);" required/>
+    Celsius (°C)
+  </td>
+</tr>   
+  </table>
+ 
+
+    <div class="form-group text-center" >
+      <button type="submit" class="btn btn-outline-dark" style="border: 2px solid black;">Generate</button>
+  </div>
+</form>
+ <!-- Main Content -->
+</div>
+
+<div class="col-12 align-self-end">
+    <!-- Footer -->
+ 
+    <!-- Footer -->
+</div> 
+</body>
+    
+</html>
+{% endblock body %}
+
+  <!----- Qualification---------------------------------------------------------->
+    {% comment %} <tr>
+      <td>QUALIFICATION <br /><br /><br /><br /><br /><br /><br /></td> {% endcomment %}
+
+      {% comment %} <td>
+        <table>
+
+          <tr>
+            <td align="center"><b>Sl.No.</b></td>
+            <td align="center"><b>Examination</b></td>
+            <td align="center"><b>Board</b></td>
+            <td align="center"><b>Percentage</b></td>
+            <td align="center"><b>Year of Passing</b></td>
+          </tr>
+
+          <tr>
+            <td>1</td>
+            <td>Class X</td>
+            <td><input type="text" name="ClassX_Board" maxlength="30" /></td>
+            <td><input type="text" name="ClassX_Percentage" maxlength="30" /></td>
+            <td><input type="text" name="ClassX_YrOfPassing" maxlength="30" /></td>
+          </tr>
+
+          <tr>
+            <td>2</td>
+            <td>Class XII</td>
+            <td><input type="text" name="ClassXII_Board" maxlength="30" /></td>
+            <td><input type="text" name="ClassXII_Percentage" maxlength="30" /></td>
+            <td><input type="text" name="ClassXII_YrOfPassing" maxlength="30" /></td>
+          </tr>
+
+          <tr>
+            <td>3</td>
+            <td>Graduation</td>
+            <td><input type="text" name="Graduation_Board" maxlength="30" /></td>
+            <td><input type="text" name="Graduation_Percentage" maxlength="30" /></td>
+            <td><input type="text" name="Graduation_YrOfPassing" maxlength="30" /></td>
+          </tr>
+
+          <tr>
+            <td>4</td>
+            <td>Masters</td>
+            <td><input type="text" name="Masters_Board" maxlength="30" /></td>
+            <td><input type="text" name="Masters_Percentage" maxlength="30" /></td>
+            <td><input type="text" name="Masters_YrOfPassing" maxlength="30" /></td>
+          </tr>
+
+          <tr>
+            <td></td>
+            <td></td>
+            <td align="center">(10 char max)</td>
+            <td align="center">(upto 2 decimal)</td>
+          </tr>
+        </table>
+
+      </td>
+    </tr> {% endcomment %}
+
+   

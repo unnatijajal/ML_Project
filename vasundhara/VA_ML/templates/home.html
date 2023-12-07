@@ -1,0 +1,384 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block body %}
+    <section class="slider_section">
+        <div id="myCarousel" class="carousel slide banner-main" data-ride="carousel">
+            <ul class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class=""></li>
+                <li data-target="#myCarousel" data-slide-to="1" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="2" class=""></li>
+            </ul>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="first-slide" src="{% static 'images/background.jpg' %}" alt="First slide">
+                    <div class="container">
+                        <div class="carousel-caption relative">
+                            <h1>VASUNDHARA</h1>
+                            <span>ANALYTICS</span>
+
+                            <p>The aim of Vasundhara Analytics is to connect farmers with company who need a suggestion about their land to grow more crops.</p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="second-slide" src="{% static 'images/background.jpg' %}" alt="Second slide">
+                    <div class="container">
+                        <div class="carousel-caption relative">
+                            <h1>VASUNDHARA</h1>
+                            <span>ANALYTICS</span>
+
+                            <p>Company provides facilities for farmers that they can saw their soil's current condition and able to get the right guidance that it help them to grow more crops with their current environment and availability of water resources in their land.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="third-slide" src="{% static 'images/background.jpg' %}" alt="Third slide">
+                    <div class="container">
+                        <div class="carousel-caption relative">
+                            <h1>VASUNDHARA</h1>
+                            <span>ANALYTICS</span>
+
+                            <p>The main features or use of this website is that farmer can choose optimal option about crop in their suitable environment. This is provided by machine learning algorithm. </P>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+                <i class='fa fa-angle-left'></i>
+            </a>
+            <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+                <i class='fa fa-angle-right'></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- about -->
+    <div id="about" class="about">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-xl-5 col-lg-5 col-md-5 co-sm-l2">
+                    <div class="about_box">
+                        <h2>About VASUNDHARA<br><strong class="black"> ANALYTICS</strong></h2>
+                        <p> 1.	The user simply have to fill up a form that contains the details about the soil's nutrition.<br>
+                            2.	This provided information will create a report about the quality of the soil and what kind of crops can be grown in that soil.<br>
+                            3.	The website will have backend machine learning approach to generate the artificial intelligence for deriving the best optimal solution for the farmer. <br>
+                            4.	The user can also enter the type of crops he/she wants to grow in that soil and according to that the user will get the suggestions about it.
+                            </p>
+                        <a href="{% url 'about_us' %}">Read More</a>
+                    </div>
+                </div>
+                <div class="col-xl-7 col-lg-7 col-md-7 co-sm-l2">
+                    <div class="about_img">
+                        <figure><img src="{% static 'images/about.png' %}" alt="img" /></figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end about -->
+    <!-- for_box -->
+    <div class="for_box_bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-3 col-lg-3 col-md-3 co-sm-l2">
+                    <div class="for_box">
+                        <i><img src="{% static 'images/1.png' %}" alt="#"/></i>
+                        <span>1000+</span>
+                        <h3>Crop Data</h3>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-3 co-sm-l2">
+                    <div class="for_box">
+                        <i><img src="{% static 'images/2.png' %}" alt="#"/></i>
+                        <span>supervised</span>
+                        <h3>ML Model</h3>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-3 co-sm-l2">
+                    <div class="for_box">
+                        <i><img src="{% static 'images/3.png' %}" alt="#"/></i>
+                        <span>10+</span>
+                        <h3>Farmers</h3>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-3 co-sm-l2">
+                    <div class="for_box">
+                        <i><img src="static/images/4.png" alt="#"/></i>
+                        <span>1000+</span>
+                        <h3>Soil Data</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end for_box -->
+    <!-- offer -->
+    <div class="offer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="title">
+                        <h2>Helpful<strong class="black"> Videos</strong></h2>
+                    </div>
+                </div>
+            </div>
+        </div> 
+        <div class="offer-bg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 ">
+                        <div class="offer_box">
+                            <a href="https://www.youtube.com/watch?v=VjuUO25VLLE&ab_channel=RebelMoney">
+                            <figure><img src="static/images/th1.png" alt="img" h /></figure></a>
+                            
+                         
+                        </div> 
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                        <div class="offer_box">
+                            <a href="https://www.youtube.com/watch?v=RHw1CKKuupU&ab_channel=DiscoverAgriculture">
+                            <figure><img src="static/images/th2.png" alt="img" /></figure></a>
+                                </div> 
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                       <div class="offer_box">
+                            <a href="https://www.youtube.com/watch?v=xFqecEtdGZ0&ab_channel=TED-Ed">
+                            <figure><img src="static/images/th3.png" alt="img" /></figure></a>
+                            
+                        </div> 
+                    </div>
+
+                    {% comment %} <div class="col-md-12">
+                        <a class="read-more">See More</a>
+                    </div> {% endcomment %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- end offer -->
+
+    <!-- product -->
+    {% comment %} <div id="product" class="product">
+        <div class="container">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="title">
+                            <h2>ANALYZED<strong class="black"> Products</strong></h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> {% endcomment %}
+
+        {% comment %} <div class="container-fluid">
+            <div class="row">
+                <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12">
+                    <div class="row">
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                            <div class="product_box">
+                                <figure><img src="static/images/product_img1.jpg" alt="#" />
+                                    <h3>Fresh Apple </h3></figure>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                            <div class="product_box">
+                                <figure><img src="static/images/product_img2.jpg" alt="#" />
+                                    <h3>Fresh Aalu  </h3>
+                                </figure>
+                            </div>
+                        </div>
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                            <div class="product_box">
+                                <figure><img src="static/images/product_img4.jpg" alt="#" />
+                                    <h3>Rice Field </h3></figure>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                            <div class="product_box">
+                                <figure><img src="{% static 'images/product_img3.jpg' %}" alt="#" />
+                                    <h3>Vegetables</h3></figure>
+                            </div>
+                        </div>
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                            <div class="product_box">
+                                <figure><img src="{% static 'images/product_img5.jpg' %}" alt="#" />
+                                    <h3>Field Wheat </h3></figure>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> {% endcomment %}
+
+
+    <!-- end product -->
+    <!-- clients -->
+    <div id="testimonial" class="clients">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    {% comment %} <div class="title">
+                        <h2>testimonial</h2>
+                    </div> {% endcomment %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clients_red">
+        <div class="container">
+            <div id="testimonial_slider" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                {% comment %} <ul class="carousel-indicators">
+                    <li data-target="#testimonial_slider" data-slide-to="0" class=""></li>
+                    <li data-target="#testimonial_slider" data-slide-to="1" class="active"></li>
+                    <li data-target="#testimonial_slider" data-slide-to="2" class=""></li>
+                </ul> {% endcomment %}
+                <!-- The slideshow -->
+                <div class="carousel-inner">
+                    <div class="carousel-item">
+                        <div class="testomonial_section">
+
+                            <div class="full testimonial_cont text_align_center cross_layout">
+                                <div class="row">
+                                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 pa_right">
+                                        {% comment %} <div class="testomonial_img">
+                                            <i><img src="{% static 'images/tes.jpg' %}" alt="#"/></i>
+                                        </div> {% endcomment %}
+                                    </div>
+                                    <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9 pa_left">
+                                        {% comment %} <div class="cross_inner">
+                                            <h3>Johndue<br><strong class="ornage_color">Farm & CO</strong></h3>
+                                            <p><img src="{% static 'icon/1.png' %}" alt="#" />ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+                                                <img src="{% static 'icon/2.png' %}" alt="#" />
+                                            </p>
+
+                                        </div> {% endcomment %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item active">
+
+                        <div class="testomonial_section">
+                            <div class="full center">
+                            </div>
+                            <div class="full testimonial_cont text_align_center cross_layout">
+                                <div class="row">
+                                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 pa_right">
+                                        {% comment %} <div class="testomonial_img">
+                                            <i><img src="{% static 'images/tes.jpg' %}" alt="#"/></i>
+                                        </div> {% endcomment %}
+                                    </div>
+                                    <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9 pa_left">
+                                        {% comment %} <div class="cross_inner">
+                                            <h3>Johndue<br><strong class="ornage_color">Farm & CO</strong></h3>
+                                            <p><img src="{% static 'icon/1.png' %}" alt="#" />ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+                                                <img src="{% static 'icon/2.png' %}" alt="#" />
+                                            </p>
+
+                                        </div> {% endcomment %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="carousel-item">
+
+                        <div class="testomonial_section">
+                            <div class="full center">
+                            </div>
+                            <div class="full testimonial_cont text_align_center cross_layout">
+                                <div class="row">
+                                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 pa_right">
+                                        {% comment %} <div class="testomonial_img">
+                                            <i><img src="{% static 'images/tes.jpg' %}" alt="#"/></i>
+                                        </div> {% endcomment %}
+                                    </div>
+                                    <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9 pa_left">
+                                        {% comment %} <div class="cross_inner">
+                                            <h3>Johndue<br><strong class="ornage_color">Farm & CO</strong></h3>
+                                            <p><img src="{% static 'icon/1.png' %}" alt="#" />ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+                                                <img src="{% static 'icon/2.png' %}" alt="#" />
+                                            </p>
+
+                                        </div> {% endcomment %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- end clients -->
+    <!-- contact -->
+
+    <div id="contact" class="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    {% comment %} <div class="title">
+                        <h2>Our <strong class="black"> Location</strong></h2>
+                    </div> {% endcomment %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid padddd">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 padddd">
+            <div class="map_section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+
+                            {% comment %} <form class="main_form">
+                                <div class="row">
+
+                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                                        <input class="form-control" placeholder="Name" type="text" name="Name">
+                                    </div>
+                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                                        <input class="form-control" placeholder="Email" type="text" name="Email">
+                                    </div>
+                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                                        <input class="form-control" placeholder="Phone" type="text" name="Phone">
+                                    </div>
+                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                                        <textarea class="textarea" placeholder="Message" type="text" name="Message"></textarea>
+                                    </div>
+                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                                        <button class="send">Send</button>
+                                    </div>
+                                </div>
+                            </form> {% endcomment %}
+                        </div>
+                    </div>
+                </div>
+                {% comment %} <div id="map">
+                </div> {% endcomment %}
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- end contact -->
+
+{% endblock body %}
